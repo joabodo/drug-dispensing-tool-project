@@ -6,7 +6,7 @@ A simple web based application that provides an interface that enables customers
 
 - [x] Login System
 - [x] Registration System
-- [ ] Forgot Password Service
+- [x] Forgot Password Service
 - [x] Admin's Interface
   - [x] Admin's Table
 - [x] Doctor Interface
