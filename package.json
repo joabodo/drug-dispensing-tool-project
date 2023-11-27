@@ -1,7 +1,7 @@
 {
   "name": "drug-dispensing-tool-main",
   "version": "1.0.0",
-  "description": "A simple web based application that provides an interface that enables customers to access **pharmaceutical products** as displayed by the website owners.",
+  "description": "A simple web based application that provides an interface that enables customers to access pharmaceutical products as displayed by the website owners.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,5 +11,30 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2"
+  },
+  "paths": {
+    "/api/users": {
+      "method": "GET",
+      "middleware": ["authenticateToken"],
+      "controller": "getUsers",
+      "description": "Return the list of all users"
+    },
+    "/api/users/:idOrEmail": {
+      "method": "GET",
+      "middleware": ["authenticateToken"],
+      "controller": "getUserById",
+      "description": "Get user details by ID or Email"
+    },
+    "/api/products": {
+      "method": "GET",
+      "controller": "getDrugs",
+      "description": "Return the list of all products"
+    },
+    "/api/products/:id": {
+      "method": "GET",
+      "controller": "getDrugById",
+      "description": "Get product details by ID"
+    }
+    // Add similar paths for other product-related queries
   }
 }
